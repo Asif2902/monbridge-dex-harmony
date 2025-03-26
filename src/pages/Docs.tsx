@@ -14,7 +14,7 @@ const Docs = () => {
           <h1 className="doc-title">Mon Bridge Dex Documentation</h1>
           <div className="flex items-center justify-between text-slate-500 text-sm mt-2 mb-8">
             <span>Version 1.0</span>
-            <span>Last Updated: May 2023</span>
+            <span>Last Updated: March 26, 2025</span>
           </div>
           
           <div className="grid md:grid-cols-4 gap-4 mt-8">
