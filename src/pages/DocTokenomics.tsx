@@ -12,7 +12,7 @@ const DocTokenomics = () => {
       <section className="doc-section section-animation-delay-0">
         <h1 className="doc-title">Tokenomics</h1>
         <p className="doc-paragraph text-lg text-slate-600">
-          Understanding the MDB token distribution and utility.
+          Understanding the MBD token distribution and utility.
         </p>
       </section>
 
@@ -21,8 +21,12 @@ const DocTokenomics = () => {
         <div className="doc-card">
           <div className="flex flex-col md:flex-row md:items-center mb-8">
             <div className="mb-6 md:mb-0 md:mr-8">
-              <div className="w-20 h-20 bg-gradient-to-br from-monbridge-500 to-monbridge-700 rounded-2xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">
-                MDB
+              <div className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg overflow-hidden">
+                <img 
+                  src="https://monbridgedex.xyz/Tokenlogo.png" 
+                  alt="MBD Token Logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
             
@@ -34,7 +38,7 @@ const DocTokenomics = () => {
                 </div>
                 <div>
                   <div className="text-sm text-slate-500">Symbol</div>
-                  <div className="text-lg font-medium text-slate-800">MDB</div>
+                  <div className="text-lg font-medium text-slate-800">MBD</div>
                 </div>
                 <div>
                   <div className="text-sm text-slate-500">Total Supply</div>
@@ -92,7 +96,7 @@ const DocTokenomics = () => {
               
               <div className="mt-6 pt-6 border-t border-slate-200">
                 <div className="text-sm text-slate-600 text-center">
-                  Total Supply: <span className="font-medium">1,000,000,000 MDB</span>
+                  Total Supply: <span className="font-medium">1,000,000,000 MBD</span>
                 </div>
               </div>
             </div>
@@ -116,7 +120,7 @@ const DocTokenomics = () => {
                 <div className="text-2xl font-medium text-monbridge-800 mb-2">40%</div>
                 <div className="text-slate-700">Stakers Rewards</div>
                 <p className="text-sm text-slate-500 mt-3">
-                  Distributed to users who stake MDB tokens in the platform
+                  Distributed to users who stake MBD tokens in the platform
                 </p>
               </div>
               
@@ -129,7 +133,7 @@ const DocTokenomics = () => {
                 <div className="text-2xl font-medium text-monbridge-800 mb-2">40%</div>
                 <div className="text-slate-700">Buy Back & Burn</div>
                 <p className="text-sm text-slate-500 mt-3">
-                  Used to purchase MDB tokens from the market and permanently remove them from circulation
+                  Used to purchase MBD tokens from the market and permanently remove them from circulation
                 </p>
               </div>
               
@@ -166,7 +170,7 @@ const DocTokenomics = () => {
                 <div>
                   <h4 className="font-medium text-slate-800">Governance</h4>
                   <p className="text-sm text-slate-600 mt-1">
-                    MDB holders can vote on platform decisions, including fee adjustments, new DEX integrations, and feature development.
+                    MBD holders can vote on platform decisions, including fee adjustments, new DEX integrations, and feature development.
                   </p>
                 </div>
               </li>
@@ -193,7 +197,7 @@ const DocTokenomics = () => {
         <h2 className="doc-subtitle">Vesting Schedule</h2>
         <div className="doc-card">
           <p className="doc-paragraph mb-6">
-            The release schedule for MDB tokens is designed to ensure price stability and align incentives for long-term growth.
+            The release schedule for MBD tokens is designed to ensure price stability and align incentives for long-term growth.
           </p>
           
           <div className="relative overflow-x-auto rounded-lg border border-slate-200">
@@ -222,7 +226,7 @@ const DocTokenomics = () => {
                 <tr>
                   <td className="font-medium">Pre-sell</td>
                   <td>10%</td>
-                  <td>6-month cliff, then 18-month linear vesting</td>
+                  <td>6-month linear vesting</td>
                   <td>5% at TGE</td>
                 </tr>
                 <tr>
@@ -243,7 +247,7 @@ const DocTokenomics = () => {
           
           <div className="doc-callout info mt-6">
             <p className="text-sm text-slate-700">
-              <strong>Note:</strong> TGE refers to Token Generation Event, the initial creation and distribution of MDB tokens.
+              <strong>Note:</strong> TGE refers to Token Generation Event, the initial creation and distribution of MBD tokens.
             </p>
           </div>
         </div>

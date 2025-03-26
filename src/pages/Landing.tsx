@@ -19,6 +19,13 @@ const Landing = () => {
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <div className="flex h-16 md:h-20 items-center justify-between">
             <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 rounded-full overflow-hidden mr-2">
+                <img 
+                  src="https://monbridgedex.xyz/Tokenlogo.png" 
+                  alt="MBD" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <div className="text-xl font-medium">
                 <span className="bg-gradient-to-r from-monbridge-600 to-monbridge-500 bg-clip-text text-transparent">
                   Mon Bridge Dex
@@ -175,7 +182,7 @@ const Landing = () => {
               </div>
               <h3 className="text-xl font-medium mb-2">Tokenomics</h3>
               <p className="text-slate-600 mb-4">
-                Comprehensive overview of MDB token, distribution, utility, and vesting schedule.
+                Comprehensive overview of MBD token, distribution, utility, and vesting schedule.
               </p>
               <Button 
                 variant="ghost" 
@@ -215,10 +222,17 @@ const Landing = () => {
         <div className="container mx-auto px-4 md:px-6 max-w-7xl">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <div className="text-lg font-medium">
-                <span className="bg-gradient-to-r from-monbridge-600 to-monbridge-500 bg-clip-text text-transparent">
-                  Mon Bridge Dex
-                </span>
+              <div className="flex items-center">
+                <img 
+                  src="https://monbridgedex.xyz/Tokenlogo.png" 
+                  alt="MBD" 
+                  className="w-6 h-6 mr-2 rounded-full"
+                />
+                <div className="text-lg font-medium">
+                  <span className="bg-gradient-to-r from-monbridge-600 to-monbridge-500 bg-clip-text text-transparent">
+                    Mon Bridge Dex
+                  </span>
+                </div>
               </div>
             </div>
             
