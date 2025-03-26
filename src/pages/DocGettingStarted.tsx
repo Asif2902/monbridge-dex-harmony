@@ -67,9 +67,9 @@ const DocGettingStarted = () => {
                 </svg>
               </div>
               <div>
-                <h3 className="text-md font-medium text-slate-800">Testnet ETH/MON for gas fees</h3>
+                <h3 className="text-md font-medium text-slate-800">Testnet MON for gas fees</h3>
                 <p className="text-sm text-slate-600 mt-1">
-                  You'll need some testnet ETH or MON to pay for transaction fees on the network.
+                  You'll need some testnet MON to pay for transaction fees on the network.
                 </p>
               </div>
             </div>
@@ -86,7 +86,7 @@ const DocGettingStarted = () => {
               <div>
                 <h3 className="text-md font-medium text-slate-800">Navigate to Mon Bridge Dex</h3>
                 <p className="text-sm text-slate-600 mt-1">
-                  Open your browser and go to <a href="https://app.monbridge.xyz" className="text-monbridge-600 hover:text-monbridge-800 underline">https://app.monbridge.xyz</a>
+                  Open your browser and go to <a href="https://monbridgedex.xyz/swap" className="text-monbridge-600 hover:text-monbridge-800 underline">https://monbridgedex.xyz/swap</a>
                 </p>
               </div>
             </div>
