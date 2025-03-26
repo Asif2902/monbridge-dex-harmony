@@ -136,37 +136,6 @@ function removeLiquidity(
               </p>
             </div>
           </div>
-          
-          <div className="border-t pt-6">
-            <h3 className="text-lg font-medium mb-4 text-slate-800">Application Architecture</h3>
-            <div className="doc-code">
-              <pre><code>{`// High-level application architecture
-|-- components/
-|   |-- swap/
-|   |   |-- SwapForm.js
-|   |   |-- TokenSelector.js
-|   |   |-- PriceInfo.js
-|   |
-|   |-- liquidity/
-|       |-- AddLiquidity.js
-|       |-- RemoveLiquidity.js
-|       |-- PoolInfo.js
-|
-|-- services/
-|   |-- web3.js         # Wallet connection and provider
-|   |-- aggregator.js   # Contract interaction
-|   |-- tokenList.js    # Token metadata management
-|
-|-- hooks/
-|   |-- useSwap.js      # Swap logic and state
-|   |-- useLiquidity.js # Liquidity management
-|   |-- useTokens.js    # Token balances and allowances
-|
-|-- utils/
-    |-- formatters.js   # Value formatting
-    |-- calculator.js   # Price calculations`}</code></pre>
-            </div>
-          </div>
         </div>
       </section>
 
