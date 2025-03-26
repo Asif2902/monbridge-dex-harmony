@@ -151,7 +151,8 @@ export const DocsSidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
         <div className="p-4 border-t border-slate-200">
           <div className="flex items-center justify-between">
             <div className="text-xs text-slate-500">Version 1.0</div>
-            <div className="text-xs text-slate-500">Last updated: 25 March 2025</div>
+            <div className="text-xs text-slate-500">Last updated: 
+            March 2025</div>
           </div>
         </div>
       </div>
