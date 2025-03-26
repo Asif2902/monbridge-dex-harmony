@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { DocsPagination } from "@/components/docs/DocsPagination";
 
@@ -57,7 +56,7 @@ const DocCoreFunctionality = () => {
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-slate-600 list-disc ml-5">
                   <li>Estimated Output: Calculated using the best available DEX router.</li>
-                  <li>Price Impact: Shown as a percentage (warning displayed if >15%).</li>
+                  <li>Price Impact: Shown as a percentage (warning displayed if &gt;15%).</li>
                   <li>Fee: 0.1% of the input amount.</li>
                 </ul>
               </div>
