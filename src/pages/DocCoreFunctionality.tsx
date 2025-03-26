@@ -27,10 +27,10 @@ const DocCoreFunctionality = () => {
               <div className="flex-1">
                 <h4 className="font-medium text-slate-800">Select Tokens</h4>
                 <p className="text-sm text-slate-600 mt-1">
-                  Choose input (e.g., ETH) and output (e.g., WMON) tokens. Use the Import Token button for custom tokens (paste contract address).
+                  Choose input (e.g., MON) and output (e.g., WMON) tokens. Use the Import Token button for custom tokens (paste contract address).
                 </p>
                 <div className="mt-3 rounded-lg bg-slate-50 border border-slate-200 p-3">
-                  <div className="text-xs text-slate-500">Example: Selecting ETH to WMON swap</div>
+                  <div className="text-xs text-slate-500">Example: Selecting MON to WMON swap</div>
                 </div>
               </div>
             </div>
@@ -43,7 +43,7 @@ const DocCoreFunctionality = () => {
                   Input the swap amount or click Max to use your full balance.
                 </p>
                 <div className="mt-3 rounded-lg bg-slate-50 border border-slate-200 p-3">
-                  <div className="text-xs text-slate-500">Example: Enter 1.0 ETH amount</div>
+                  <div className="text-xs text-slate-500">Example: Enter 1.0 Mon amount</div>
                 </div>
               </div>
             </div>
@@ -79,14 +79,14 @@ const DocCoreFunctionality = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="border rounded-lg p-4 bg-white shadow-sm">
                 <div className="text-center">
-                  <div className="font-medium text-slate-800">ETH → Token</div>
-                  <div className="text-sm text-slate-500 mt-1">Swap ETH for any supported token</div>
+                  <div className="font-medium text-slate-800">MON → Token</div>
+                  <div className="text-sm text-slate-500 mt-1">Swap MON for any supported token</div>
                 </div>
               </div>
               <div className="border rounded-lg p-4 bg-white shadow-sm">
                 <div className="text-center">
-                  <div className="font-medium text-slate-800">Token → ETH</div>
-                  <div className="text-sm text-slate-500 mt-1">Swap any supported token for ETH</div>
+                  <div className="font-medium text-slate-800">Token → MON</div>
+                  <div className="text-sm text-slate-500 mt-1">Swap any supported token for MON</div>
                 </div>
               </div>
               <div className="border rounded-lg p-4 bg-white shadow-sm">
