@@ -119,7 +119,7 @@ const Docs = () => {
               <span className="doc-highlight">Best Swap Rates:</span> Aggregates liquidity from integrated DEXes to maximize output.
             </li>
             <li>
-              <span className="doc-highlight">Multi-Token Support:</span> Swap ETH, MON, WMON (wrapped MON), USDC, USDT, and custom tokens.
+              <span className="doc-highlight">Multi-Token Support:</span> Swap MON, WMON (wrapped MON), USDC, USDT, and custom tokens.
             </li>
             <li>
               <span className="doc-highlight">Liquidity Management:</span> Add/remove liquidity from supported pools.

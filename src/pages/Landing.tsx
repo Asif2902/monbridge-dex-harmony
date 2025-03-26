@@ -94,6 +94,7 @@ const Landing = () => {
                   variant="outline" 
                   size="lg"
                   className="rounded-full border-slate-200 hover:bg-slate-50 min-w-[180px] h-12"
+                  onClick={() => window.open('https://monbridgedex.xyz', '_blank')}
                 >
                   <span>Launch App</span>
                   <ExternalLink className="ml-2 h-4 w-4" />
@@ -222,7 +223,7 @@ const Landing = () => {
             </div>
             
             <div className="flex items-center space-x-6 text-sm text-slate-500">
-              <a href="#" className="hover:text-monbridge-600 transition-colors">Twitter</a>
+              <a href="https://x.com/MONBRIDGEDEX" className="hover:text-monbridge-600 transition-colors">X</a>
               <a href="#" className="hover:text-monbridge-600 transition-colors">Github</a>
               <a href="#" className="hover:text-monbridge-600 transition-colors">Discord</a>
               <a href="#" className="hover:text-monbridge-600 transition-colors">Contact</a>

@@ -60,7 +60,7 @@ const DocFeesPriceImpact = () => {
                 <div className="text-2xl font-medium text-slate-800">Variable</div>
               </div>
               <p className="doc-paragraph">
-                Gas fees are paid in ETH/MON for blockchain transactions. These fees vary based on network congestion and the complexity of the transaction.
+                Gas fees are paid in MON for blockchain transactions. These fees vary based on network congestion and the complexity of the transaction.
               </p>
               <div className="mt-4 p-4 rounded-lg bg-slate-50 border border-slate-200">
                 <h4 className="text-sm font-medium text-slate-700">Gas Optimization:</h4>

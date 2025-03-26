@@ -1,11 +1,10 @@
 
 import { useState, useEffect } from "react";
-import { Outlet } from "react-router-dom";
 import { DocsHeader } from "./DocsHeader";
 import { DocsSidebar } from "./DocsSidebar";
 import { cn } from "@/lib/utils";
 
-export const DocsLayout = () => {
+export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   
   // Close sidebar on route change on mobile
@@ -32,7 +31,7 @@ export const DocsLayout = () => {
           )}
         >
           <main className="container max-w-4xl py-8 md:py-12 px-4 md:px-8">
-            <Outlet />
+            {children}
           </main>
         </div>
       </div>

@@ -178,37 +178,9 @@ const DocTokenomics = () => {
                   </svg>
                 </div>
                 <div>
-                  <h4 className="font-medium text-slate-800">Fee Discounts</h4>
-                  <p className="text-sm text-slate-600 mt-1">
-                    Users who stake MDB tokens receive discounts on trading fees, with higher discounts for larger stake amounts.
-                  </p>
-                </div>
-              </li>
-              
-              <li className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-monbridge-50 flex items-center justify-center text-monbridge-600 mt-0.5 mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </div>
-                <div>
                   <h4 className="font-medium text-slate-800">Staking Rewards</h4>
                   <p className="text-sm text-slate-600 mt-1">
                     Stakers earn a share of the platform's trading fees proportional to their stake.
-                  </p>
-                </div>
-              </li>
-              
-              <li className="flex items-start">
-                <div className="h-6 w-6 rounded-full bg-monbridge-50 flex items-center justify-center text-monbridge-600 mt-0.5 mr-3">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <polyline points="20 6 9 17 4 12" />
-                  </svg>
-                </div>
-                <div>
-                  <h4 className="font-medium text-slate-800">Premium Features</h4>
-                  <p className="text-sm text-slate-600 mt-1">
-                    Access to advanced trading tools, analytics, and priority routing for MDB holders.
                   </p>
                 </div>
               </li>

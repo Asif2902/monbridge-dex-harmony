@@ -73,7 +73,7 @@ export const DocsHeader = ({ onToggleSidebar }: { onToggleSidebar: () => void })
                 <div className="bg-white rounded-lg shadow-lg border border-slate-100 p-2">
                   <a href="#" className="block px-4 py-2 text-sm text-slate-700 rounded-md hover:bg-monbridge-50">GitHub</a>
                   <a href="#" className="block px-4 py-2 text-sm text-slate-700 rounded-md hover:bg-monbridge-50">Community</a>
-                  <a href="#" className="block px-4 py-2 text-sm text-slate-700 rounded-md hover:bg-monbridge-50">Twitter</a>
+                  <a href="https://x.com/MONBRIDGEDEX" className="block px-4 py-2 text-sm text-slate-700 rounded-md hover:bg-monbridge-50">X</a>
                 </div>
               </div>
             </div>
@@ -91,7 +91,7 @@ export const DocsHeader = ({ onToggleSidebar }: { onToggleSidebar: () => void })
             <Button 
               variant="default" 
               className="rounded-full bg-monbridge-600 hover:bg-monbridge-700 text-white"
-              onClick={() => window.open('https://app.monbridge.xyz', '_blank')}
+              onClick={() => window.open('https://monbridgedex.xyz', '_blank')}
             >
               Launch App
             </Button>
