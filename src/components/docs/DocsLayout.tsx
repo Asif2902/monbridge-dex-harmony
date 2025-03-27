@@ -50,9 +50,15 @@ export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className={cn(
       "min-h-screen flex flex-col",
-      isDarkMode ? "bg-slate-950 text-white" : "bg-slate-50 text-slate-900"
+      isDarkMode 
+        ? "bg-slate-950 text-slate-200" 
+        : "bg-slate-50 text-slate-900"
     )}>
-      <DocsHeader onToggleSidebar={toggleSidebar} isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+      <DocsHeader 
+        onToggleSidebar={toggleSidebar} 
+        isDarkMode={isDarkMode} 
+        toggleTheme={toggleTheme} 
+      />
       
       <div className="flex flex-1 pt-16 md:pt-20">
         <DocsSidebar 
@@ -67,7 +73,10 @@ export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
             "flex-1 transition-all duration-300 md:pl-72"
           )}
         >
-          <main className="container max-w-4xl py-8 md:py-12 px-4 md:px-8">
+          <main className={cn(
+            "container max-w-4xl py-8 md:py-12 px-4 md:px-8",
+            isDarkMode ? "prose-invert" : "prose"
+          )}>
             {children}
           </main>
         </div>

@@ -1,10 +1,10 @@
 
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Search, Sun, Moon } from "lucide-react";
+import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const DocsHeader = ({ 
   onToggleSidebar,
@@ -37,8 +37,8 @@ export const DocsHeader = ({
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md",
         isScrolled 
           ? isDarkMode 
-            ? "bg-slate-900/90 shadow-sm border-b border-slate-800" 
-            : "bg-white/90 shadow-sm" 
+            ? "bg-slate-900/95 shadow-sm border-b border-slate-800" 
+            : "bg-white/95 shadow-sm border-b border-slate-100" 
           : "bg-transparent"
       )}
     >
@@ -115,14 +115,8 @@ export const DocsHeader = ({
           </nav>
 
           <div className="flex items-center space-x-2">
-            <div className="hidden md:flex items-center mr-2 space-x-1">
-              <Sun className="h-4 w-4 dark:text-slate-400 text-slate-600" />
-              <Switch 
-                checked={isDarkMode} 
-                onCheckedChange={toggleTheme} 
-                className="data-[state=checked]:bg-monbridge-600"
-              />
-              <Moon className="h-4 w-4 dark:text-slate-400 text-slate-600" />
+            <div className="hidden md:block mr-2">
+              <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
             </div>
             <Button 
               variant="ghost" 
