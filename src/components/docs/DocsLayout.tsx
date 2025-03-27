@@ -3,12 +3,10 @@ import { useState, useEffect } from "react";
 import { DocsHeader } from "./DocsHeader";
 import { DocsSidebar } from "./DocsSidebar";
 import { cn } from "@/lib/utils";
-import { useIsMobile } from "@/hooks/use-mobile";
 
 export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  const isMobile = useIsMobile();
   
   // Initialize dark mode based on user preference or localStorage
   useEffect(() => {
@@ -35,10 +33,10 @@ export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
   
   // Close sidebar on route change on mobile
   useEffect(() => {
-    if (isMobile) {
+    if (window.innerWidth < 768) {
       setSidebarOpen(false);
     }
-  }, [location.pathname, isMobile]);
+  }, [location.pathname]);
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
@@ -61,7 +59,7 @@ export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
         toggleTheme={toggleTheme} 
       />
       
-      <div className="flex flex-1 pt-16">
+      <div className="flex flex-1 pt-16 md:pt-20">
         <DocsSidebar 
           isOpen={sidebarOpen} 
           onClose={() => setSidebarOpen(false)} 
@@ -71,12 +69,11 @@ export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
         
         <div 
           className={cn(
-            "flex-1 transition-all duration-300",
-            !isMobile && "md:pl-72"
+            "flex-1 transition-all duration-300 md:pl-72"
           )}
         >
           <main className={cn(
-            "container max-w-4xl py-6 md:py-12 px-4 md:px-8",
+            "container max-w-4xl py-8 md:py-12 px-4 md:px-8",
             isDarkMode ? "prose-invert" : "prose"
           )}>
             {children}

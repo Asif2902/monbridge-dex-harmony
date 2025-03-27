@@ -14,39 +14,35 @@ import DocSecurity from "./pages/DocSecurity";
 import DocTechnicalSpecifications from "./pages/DocTechnicalSpecifications";
 import DocTokenomics from "./pages/DocTokenomics";
 import NotFound from "./pages/NotFound";
-import Index from "./pages/Index";
 
-const App = () => {
-  // Create a new QueryClient instance inside the component
-  const queryClient = new QueryClient();
-  
-  return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            
-            {/* Documentation Routes */}
-            <Route path="/docs" element={<DocsIndex />}>
-              <Route index element={<Docs />} />
-              <Route path="getting-started" element={<DocGettingStarted />} />
-              <Route path="core-functionality" element={<DocCoreFunctionality />} />
-              <Route path="fees-price-impact" element={<DocFeesPriceImpact />} />
-              <Route path="security" element={<DocSecurity />} />
-              <Route path="technical-specifications" element={<DocTechnicalSpecifications />} />
-              <Route path="tokenomics" element={<DocTokenomics />} />
-            </Route>
-            
-            {/* Catch-all route */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  );
-};
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          
+          {/* Documentation Routes */}
+          <Route path="/docs" element={<DocsIndex />}>
+            <Route index element={<Docs />} />
+            <Route path="getting-started" element={<DocGettingStarted />} />
+            <Route path="core-functionality" element={<DocCoreFunctionality />} />
+            <Route path="fees-price-impact" element={<DocFeesPriceImpact />} />
+            <Route path="security" element={<DocSecurity />} />
+            <Route path="technical-specifications" element={<DocTechnicalSpecifications />} />
+            <Route path="tokenomics" element={<DocTokenomics />} />
+          </Route>
+          
+          {/* Catch-all route */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
 
 export default App;
