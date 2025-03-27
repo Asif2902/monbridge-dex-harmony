@@ -15,9 +15,8 @@ export const DocsLayout = ({ children }: { children: React.ReactNode }) => {
     if (storedTheme) {
       setIsDarkMode(storedTheme === "dark");
     } else {
-      // Check user preference
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-      setIsDarkMode(prefersDark);
+      // Default to light mode instead of checking user preference
+      setIsDarkMode(false);
     }
   }, []);
 

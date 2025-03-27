@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, Search } from "lucide-react";
+import { Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
@@ -16,7 +16,6 @@ export const DocsHeader = ({
   toggleTheme: () => void;
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -119,14 +118,6 @@ export const DocsHeader = ({
               <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
             </div>
             <Button 
-              variant="ghost" 
-              size="icon" 
-              className="rounded-full"
-              onClick={() => setIsSearchOpen(!isSearchOpen)}
-            >
-              <Search className={cn("h-5 w-5", isDarkMode ? "text-white" : "text-slate-700")} />
-            </Button>
-            <Button 
               variant="default" 
               className="rounded-full bg-monbridge-600 hover:bg-monbridge-700 text-white"
               onClick={() => window.open('https://monbridgedex.xyz', '_blank')}
@@ -136,46 +127,6 @@ export const DocsHeader = ({
           </div>
         </div>
       </div>
-      
-      {isSearchOpen && (
-        <div className={cn(
-          "absolute inset-0 z-50 animate-fade-in",
-          isDarkMode ? "bg-slate-900/95" : "bg-white/95"
-        )}>
-          <div className="container h-full flex flex-col items-center justify-center max-w-2xl py-20">
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="absolute top-4 right-4 rounded-full"
-              onClick={() => setIsSearchOpen(false)}
-            >
-              <X className="h-5 w-5" />
-            </Button>
-            <div className="w-full">
-              <div className="relative w-full">
-                <Search className="absolute left-4 top-3.5 h-5 w-5 text-monbridge-400" />
-                <input
-                  type="text"
-                  placeholder="Search documentation..."
-                  className={cn(
-                    "w-full h-12 pl-12 pr-4 rounded-xl border shadow-sm focus:outline-none focus:ring-2 focus:ring-monbridge-400 transition-all",
-                    isDarkMode 
-                      ? "bg-slate-800 border-slate-700 text-white" 
-                      : "bg-white border-slate-200 text-slate-900"
-                  )}
-                  autoFocus
-                />
-              </div>
-              <div className={cn(
-                "mt-8 text-center",
-                isDarkMode ? "text-slate-400" : "text-slate-500"
-              )}>
-                No recent searches
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
     </header>
   );
 };
