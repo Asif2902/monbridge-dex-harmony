@@ -9,11 +9,14 @@ import {
   ShieldCheck, 
   Coins, 
   Code, 
-  Sparkles
+  Sparkles,
+  Sun,
+  Moon
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { Switch } from "@/components/ui/switch";
 import { cn } from "@/lib/utils";
 
 type NavItem = {
@@ -23,7 +26,17 @@ type NavItem = {
   children?: NavItem[];
 };
 
-export const DocsSidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+export const DocsSidebar = ({ 
+  isOpen, 
+  onClose, 
+  isDarkMode, 
+  toggleTheme 
+}: { 
+  isOpen: boolean; 
+  onClose: () => void;
+  isDarkMode: boolean;
+  toggleTheme: () => void;
+}) => {
   const navigate = useNavigate();
   const location = useLocation();
   const [activeSection, setActiveSection] = useState("");
@@ -94,13 +107,13 @@ export const DocsSidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
   return (
     <div 
       className={cn(
-        "fixed inset-y-0 left-0 z-40 w-72 bg-white border-r border-slate-200 transform transition-transform duration-300 ease-in-out md:translate-x-0",
+        "fixed inset-y-0 left-0 z-40 w-72 border-r border-slate-200 transform transition-transform duration-300 ease-in-out md:translate-x-0 dark:bg-slate-900 dark:border-slate-700 bg-white",
         isOpen ? "translate-x-0" : "-translate-x-full"
       )}
     >
       <div className="flex flex-col h-full">
         <div className="h-16 md:h-20 flex items-center px-6 justify-between">
-          <div className="text-lg font-semibold">Contents</div>
+          <div className="text-lg font-semibold dark:text-white">Contents</div>
           <Button 
             variant="ghost" 
             size="icon" 
@@ -110,7 +123,7 @@ export const DocsSidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
             <ChevronRight className="h-5 w-5" />
           </Button>
         </div>
-        <Separator />
+        <Separator className="dark:bg-slate-700" />
         <ScrollArea className="flex-1 px-3 py-4">
           <div className="space-y-1 pb-4">
             {navItems.map((item, index) => (
@@ -119,7 +132,9 @@ export const DocsSidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                   variant="ghost"
                   className={cn(
                     "w-full justify-start font-medium text-sm",
-                    isActive(item.link) && "bg-monbridge-50 text-monbridge-800"
+                    isActive(item.link) 
+                      ? "bg-monbridge-50 text-monbridge-800 dark:bg-monbridge-900/20 dark:text-monbridge-300" 
+                      : "dark:text-slate-300"
                   )}
                   onClick={() => handleNavigation(item.link)}
                 >
@@ -134,8 +149,8 @@ export const DocsSidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                         key={childIndex}
                         variant="ghost"
                         className={cn(
-                          "w-full justify-start font-normal text-sm text-slate-600 hover:text-monbridge-800 pl-6",
-                          isActive(child.link) && "text-monbridge-800"
+                          "w-full justify-start font-normal text-sm text-slate-600 hover:text-monbridge-800 dark:text-slate-400 dark:hover:text-monbridge-300 pl-6",
+                          isActive(child.link) && "text-monbridge-800 dark:text-monbridge-300"
                         )}
                         onClick={() => handleNavigation(child.link)}
                       >
@@ -148,11 +163,21 @@ export const DocsSidebar = ({ isOpen, onClose }: { isOpen: boolean; onClose: () 
             ))}
           </div>
         </ScrollArea>
-        <div className="p-4 border-t border-slate-200">
+        <div className="p-4 border-t border-slate-200 dark:border-slate-700">
+          <div className="flex items-center justify-between mb-2">
+            <div className="flex items-center space-x-2">
+              <Sun className="h-4 w-4 dark:text-slate-400 text-slate-600" />
+              <Switch 
+                checked={isDarkMode} 
+                onCheckedChange={toggleTheme} 
+                className="data-[state=checked]:bg-monbridge-600"
+              />
+              <Moon className="h-4 w-4 dark:text-slate-400 text-slate-600" />
+            </div>
+          </div>
           <div className="flex items-center justify-between">
-            <div className="text-xs text-slate-500">Version 1.0</div>
-            <div className="text-xs text-slate-500">Last updated: 
-            March 2025</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400">Version 1.0</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400">Last updated: March 2025</div>
           </div>
         </div>
       </div>
