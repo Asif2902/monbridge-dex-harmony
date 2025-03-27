@@ -5,6 +5,7 @@ import { Menu, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ThemeToggle } from "./ThemeToggle";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export const DocsHeader = ({ 
   onToggleSidebar,
@@ -18,6 +19,7 @@ export const DocsHeader = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,8 +43,8 @@ export const DocsHeader = ({
           : "bg-transparent"
       )}
     >
-      <div className="doc-container">
-        <div className="flex h-16 md:h-20 items-center justify-between">
+      <div className="container max-w-7xl mx-auto">
+        <div className="flex h-16 items-center justify-between px-4">
           <div className="flex items-center space-x-4">
             <Button 
               variant="ghost" 
@@ -62,64 +64,71 @@ export const DocsHeader = ({
             </div>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-1">
-            <Button 
-              variant="ghost" 
-              className={cn(
-                "rounded-full text-sm font-medium transition-colors",
-                isActive('/docs') 
-                  ? isDarkMode 
-                    ? "bg-slate-800 text-monbridge-300" 
-                    : "bg-monbridge-50 text-monbridge-800"
-                  : isDarkMode ? "text-slate-300" : ""
-              )}
-              onClick={() => navigate('/docs')}
-            >
-              Documentation
-            </Button>
-            <div className="relative group">
+          {!isMobile && (
+            <nav className="hidden md:flex items-center space-x-1">
               <Button 
                 variant="ghost" 
-                className={cn("rounded-full text-sm font-medium transition-colors group", 
-                  isDarkMode ? "text-slate-300" : ""
+                className={cn(
+                  "rounded-full text-sm font-medium transition-colors",
+                  isActive('/docs') 
+                    ? isDarkMode 
+                      ? "bg-slate-800 text-monbridge-300" 
+                      : "bg-monbridge-50 text-monbridge-800"
+                    : isDarkMode ? "text-slate-300" : ""
                 )}
+                onClick={() => navigate('/docs')}
               >
-                <span>Resources</span>
-                <ChevronDown className="ml-1 h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+                Documentation
               </Button>
-              <div className="absolute top-full left-0 pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left scale-95 group-hover:scale-100">
-                <div className={cn("rounded-lg shadow-lg border p-2", 
-                  isDarkMode 
-                    ? "bg-slate-800 border-slate-700" 
-                    : "bg-white border-slate-100"
-                )}>
-                  <a href="#" className={cn("block px-4 py-2 text-sm rounded-md", 
+              <div className="relative group">
+                <Button 
+                  variant="ghost" 
+                  className={cn("rounded-full text-sm font-medium transition-colors group", 
+                    isDarkMode ? "text-slate-300" : ""
+                  )}
+                >
+                  <span>Resources</span>
+                  <ChevronDown className="ml-1 h-4 w-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+                </Button>
+                <div className="absolute top-full left-0 pt-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform origin-top-left scale-95 group-hover:scale-100">
+                  <div className={cn("rounded-lg shadow-lg border p-2", 
                     isDarkMode 
-                      ? "text-slate-300 hover:bg-slate-700" 
-                      : "text-slate-700 hover:bg-monbridge-50"
-                  )}>GitHub</a>
-                  <a href="#" className={cn("block px-4 py-2 text-sm rounded-md", 
-                    isDarkMode 
-                      ? "text-slate-300 hover:bg-slate-700" 
-                      : "text-slate-700 hover:bg-monbridge-50"
-                  )}>Community</a>
-                  <a href="https://x.com/MONBRIDGEDEX" className={cn("block px-4 py-2 text-sm rounded-md", 
-                    isDarkMode 
-                      ? "text-slate-300 hover:bg-slate-700" 
-                      : "text-slate-700 hover:bg-monbridge-50"
-                  )}>X</a>
+                      ? "bg-slate-800 border-slate-700" 
+                      : "bg-white border-slate-100"
+                  )}>
+                    <a href="#" className={cn("block px-4 py-2 text-sm rounded-md", 
+                      isDarkMode 
+                        ? "text-slate-300 hover:bg-slate-700" 
+                        : "text-slate-700 hover:bg-monbridge-50"
+                    )}>GitHub</a>
+                    <a href="#" className={cn("block px-4 py-2 text-sm rounded-md", 
+                      isDarkMode 
+                        ? "text-slate-300 hover:bg-slate-700" 
+                        : "text-slate-700 hover:bg-monbridge-50"
+                    )}>Community</a>
+                    <a href="https://x.com/MONBRIDGEDEX" className={cn("block px-4 py-2 text-sm rounded-md", 
+                      isDarkMode 
+                        ? "text-slate-300 hover:bg-slate-700" 
+                        : "text-slate-700 hover:bg-monbridge-50"
+                    )}>X</a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </nav>
+            </nav>
+          )}
 
           <div className="flex items-center space-x-2">
-            <div className="hidden md:block mr-2">
-              <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
-            </div>
+            {!isMobile && (
+              <div className="hidden md:block mr-2">
+                <ThemeToggle isDarkMode={isDarkMode} toggleTheme={toggleTheme} />
+              </div>
+            )}
             <Button 
               variant="default" 
-              className="rounded-full bg-monbridge-600 hover:bg-monbridge-700 text-white"
+              className={cn(
+                "rounded-full bg-monbridge-600 hover:bg-monbridge-700 text-white",
+                isMobile ? "text-xs px-3 py-1" : ""
+              )}
               onClick={() => window.open('https://monbridgedex.xyz', '_blank')}
             >
               Launch App
