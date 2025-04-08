@@ -12,8 +12,6 @@ import DocFeesPriceImpact from "./pages/DocFeesPriceImpact";
 import DocSecurity from "./pages/DocSecurity";
 import DocTechnicalSpecifications from "./pages/DocTechnicalSpecifications";
 import DocTokenomics from "./pages/DocTokenomics";
-import DocRoadmap from "./pages/DocRoadmap";           // Add this line
-import DocDeepLinking from "./pages/DocDeepLinking";   // Add this line
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
