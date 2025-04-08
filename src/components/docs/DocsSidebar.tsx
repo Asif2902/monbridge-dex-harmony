@@ -83,17 +83,7 @@ export const DocsSidebar = ({
       title: "7. Tokenomics",
       link: "/docs/tokenomics",
       icon: <Sparkles className="h-4 w-4" />
-    },
-{
-  title: "8. Project Roadmap",
-  link: "/docs/roadmap",
-  icon: <Map className="h-4 w-4" />
-},
-{
-  title: "9. Deep Linking",
-  link: "/docs/deep-linking",
-  icon: <Link className="h-4 w-4" />
-}
+    }
     
   ];
 
