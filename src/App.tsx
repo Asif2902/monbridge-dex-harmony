@@ -34,9 +34,6 @@ const App = () => (
             <Route path="security" element={<DocSecurity />} />
             <Route path="technical-specifications" element={<DocTechnicalSpecifications />} />
             <Route path="tokenomics" element={<DocTokenomics />} />
-            <Route path="roadmap" element={<DocRoadmap />} />                 // Add this line
-            <Route path="deep-linking" element={<DocDeepLinking />} />        // Add this line
-          </Route>
           
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
