@@ -1,4 +1,6 @@
 
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { 
   ChevronRight, 
   BookOpen, 
@@ -7,9 +9,7 @@ import {
   ShieldCheck, 
   Coins, 
   Code, 
-  Sparkles,
-  Map,                
-  Link              
+  Sparkles
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
