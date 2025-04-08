@@ -29,7 +29,8 @@ const DocTechnicalSpecifications = () => {
                 <h4 className="text-sm font-medium text-slate-700">Key Contract Functions</h4>
               </div>
               <div className="doc-code">
-                <pre><code>{`// Core swap function
+                <pre>
+                  <code>{`// Core swap function
 function aggregateSwap(
     address tokenIn,
     address tokenOut,
@@ -61,7 +62,8 @@ function removeLiquidity(
     uint256 liquidity,
     uint256 amountAMin,
     uint256 amountBMin
-) external returns (uint256 amountA, uint256 amountB);`}</code></pre>
+) external returns (uint256 amountA, uint256 amountB);`}</code>
+                </pre>
               </div>
             </div>
             
@@ -75,7 +77,6 @@ function removeLiquidity(
           
           <div className="border-t pt-6">
             <h3 className="text-lg font-medium mb-4 text-slate-800">Contract Architecture</h3>
-            
             <div className="relative overflow-x-auto rounded-lg border border-slate-200">
               <table className="doc-table">
                 <thead>
@@ -127,7 +128,6 @@ function removeLiquidity(
                 </p>
               </div>
             </div>
-            
             <div className="mt-6">
               <h4 className="text-md font-medium text-slate-800 mb-2">Rate Limiting</h4>
               <p className="text-sm text-slate-600">
@@ -144,7 +144,6 @@ function removeLiquidity(
           <p className="doc-paragraph mb-6">
             Mon Bridge Dex integrates with up to 10 DEX routers to find the optimal path for token swaps.
           </p>
-          
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="p-4 text-center border rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow">
               <div className="font-medium text-slate-800">Uniswap</div>
@@ -213,48 +212,45 @@ function removeLiquidity(
           <p className="doc-paragraph mb-6 text-sm text-slate-600">
             MonBridgeDex supports deep linking directly into the swap interface using URL parameters. This makes it easy to share specific token pairs, create default trade links, and integrate with other platforms or bots.
           </p>
-          
           <div className="mt-6">
             <h4 className="text-md font-medium text-slate-800 mb-2">Format</h4>
-            <pre className="doc-code p-4 border rounded bg-slate-50">
-              <code>https://monbridgedex.xyz/swap?tokenIn+tokenOut</code>
+            <pre className="doc-code p-4 border rounded bg-slate-100">
+              <code className="text-slate-800">https://monbridgedex.xyz/swap?tokenIn+tokenOut</code>
             </pre>
             <p className="text-sm text-slate-600 mt-2">
-              <strong>tokenIn:</strong> A token symbol (e.g., <code>mon</code>, <code>usdc</code>) or token contract address.<br />
+              <strong>tokenIn:</strong> A token symbol (e.g., <code className="text-slate-800">mon</code>, <code className="text-slate-800">usdc</code>) or token contract address.<br />
               <strong>tokenOut:</strong> A token symbol or token contract address.
             </p>
             <p className="mt-2 text-sm text-slate-500">
-              Note: Use <code>mon</code> for the native Monad token. The platform will automatically handle wrapping if needed (e.g., WMON).
+              Note: Use <code className="text-slate-800">mon</code> for the native Monad token. The platform will automatically handle wrapping if needed (e.g., WMON).
             </p>
           </div>
-
           <div className="mt-6">
             <h4 className="text-md font-medium text-slate-800 mb-2">Examples</h4>
             <ul className="list-disc ml-6 space-y-2 text-sm text-slate-600">
               <li>
-                <strong>Swap MON to USDC:</strong> <br />
-                <code>https://monbridgedex.xyz/swap?mon+usdc</code>
+                <strong>Swap MON to USDC:</strong><br />
+                <code className="text-slate-800">https://monbridgedex.xyz/swap?mon+usdc</code>
               </li>
               <li>
-                <strong>Swap USDT to an unlisted token:</strong> <br />
-                <code>https://monbridgedex.xyz/swap?usdt+0xabc123...def</code>
+                <strong>Swap USDT to an unlisted token:</strong><br />
+                <code className="text-slate-800">https://monbridgedex.xyz/swap?usdt+0xabc123...def</code>
               </li>
               <li>
-                <strong>Swap MON to a custom token by address:</strong> <br />
-                <code>https://monbridgedex.xyz/swap?mon+0xdef456...789</code>
+                <strong>Swap MON to a custom token by address:</strong><br />
+                <code className="text-slate-800">https://monbridgedex.xyz/swap?mon+0xdef456...789</code>
               </li>
             </ul>
           </div>
-
           <div className="mt-6">
             <h4 className="text-md font-medium text-slate-800 mb-2">Optional Parameters</h4>
             <p className="text-sm text-slate-600">
-              You can pre-fill the amount input by using the <code>&amp;amount=</code> parameter.
+              You can pre-fill the amount input by using the <code className="text-slate-800">&amp;amount=</code> parameter.
             </p>
             <p className="mt-2 text-sm text-slate-600">
               Example:
               <br />
-              <code>https://monbridgedex.xyz/swap?mon+usdc&amp;amount=1.5</code>
+              <code className="text-slate-800">https://monbridgedex.xyz/swap?mon+usdc&amp;amount=1.5</code>
             </p>
           </div>
         </div>
