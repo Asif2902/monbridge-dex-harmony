@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { DocsPagination } from "@/components/docs/DocsPagination";
 
@@ -67,7 +66,7 @@ function removeLiquidity(
             </div>
             
             <div className="mt-6">
-              <h4 className="text-md font-medium text-slate-800 mb-2">Supported Standards</h4>
+              <h4 className="text-md font-medium text-slate-800">Supported Standards</h4>
               <p className="text-sm text-slate-600">
                 Mon Bridge Dex integrates with Uniswap V2-compatible DEXes. This allows for a consistent interface when interacting with different liquidity providers.
               </p>
@@ -204,6 +203,59 @@ function removeLiquidity(
                 <span className="text-sm text-slate-700">Support MON Testnet (Chain ID: 10143)</span>
               </li>
             </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="doc-section section-animation-delay-4">
+        <h2 className="doc-subtitle">Deep Linking Support</h2>
+        <div className="doc-card">
+          <p className="doc-paragraph mb-6 text-sm text-slate-600">
+            MonBridgeDex supports deep linking directly into the swap interface using URL parameters. This makes it easy to share specific token pairs, create default trade links, and integrate with other platforms or bots.
+          </p>
+          
+          <div className="mt-6">
+            <h4 className="text-md font-medium text-slate-800 mb-2">Format</h4>
+            <pre className="doc-code p-4 border rounded bg-slate-50">
+              <code>https://monbridgedex.xyz/swap?tokenIn+tokenOut</code>
+            </pre>
+            <p className="text-sm text-slate-600 mt-2">
+              <strong>tokenIn:</strong> A token symbol (e.g., <code>mon</code>, <code>usdc</code>) or token contract address.<br />
+              <strong>tokenOut:</strong> A token symbol or token contract address.
+            </p>
+            <p className="mt-2 text-sm text-slate-500">
+              Note: Use <code>mon</code> for the native Monad token. The platform will automatically handle wrapping if needed (e.g., WMON).
+            </p>
+          </div>
+
+          <div className="mt-6">
+            <h4 className="text-md font-medium text-slate-800 mb-2">Examples</h4>
+            <ul className="list-disc ml-6 space-y-2 text-sm text-slate-600">
+              <li>
+                <strong>Swap MON to USDC:</strong> <br />
+                <code>https://monbridgedex.xyz/swap?mon+usdc</code>
+              </li>
+              <li>
+                <strong>Swap USDT to an unlisted token:</strong> <br />
+                <code>https://monbridgedex.xyz/swap?usdt+0xabc123...def</code>
+              </li>
+              <li>
+                <strong>Swap MON to a custom token by address:</strong> <br />
+                <code>https://monbridgedex.xyz/swap?mon+0xdef456...789</code>
+              </li>
+            </ul>
+          </div>
+
+          <div className="mt-6">
+            <h4 className="text-md font-medium text-slate-800 mb-2">Optional Parameters</h4>
+            <p className="text-sm text-slate-600">
+              You can pre-fill the amount input by using the <code>&amp;amount=</code> parameter.
+            </p>
+            <p className="mt-2 text-sm text-slate-600">
+              Example:
+              <br />
+              <code>https://monbridgedex.xyz/swap?mon+usdc&amp;amount=1.5</code>
+            </p>
           </div>
         </div>
       </section>
