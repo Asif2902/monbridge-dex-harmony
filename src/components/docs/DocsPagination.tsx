@@ -17,6 +17,8 @@ const pages: Page[] = [
   { title: "Security & Best Practices", path: "/docs/security" },
   { title: "Technical Specifications", path: "/docs/technical-specifications" },
   { title: "Tokenomics", path: "/docs/tokenomics" },
+{ title: "Project Roadmap", path: "/docs/roadmap" },
+{ title: "Deep Linking", path: "/docs/deep-linking" }
 ];
 
 export const DocsPagination = () => {
