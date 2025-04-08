@@ -34,6 +34,7 @@ const App = () => (
             <Route path="security" element={<DocSecurity />} />
             <Route path="technical-specifications" element={<DocTechnicalSpecifications />} />
             <Route path="tokenomics" element={<DocTokenomics />} />
+          </Route>
           
           {/* Catch-all route */}
           <Route path="*" element={<NotFound />} />
