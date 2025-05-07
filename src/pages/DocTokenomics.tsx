@@ -9,9 +9,12 @@ return ( <div className="space-y-8"> <section className="doc-section section-ani
     <div className="doc-card">
       <div className="flex flex-col md:flex-row md:items-center mb-8">
         <div className="mb-6 md:mb-0 md:mr-8">
-          <div className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg overflow-hidden bg-gray-100">
-            {/* Logo coming soon placeholder */}
-            <div className="text-xs text-slate-400">Logo Coming Soon</div>
+          <div className="w-20 h-20 rounded-2xl flex items-center justify-center shadow-lg overflow-hidden">
+            <img   
+              src="https://monbridgedex.xyz/Tokenlogo.png"   
+              alt="MBD Token Logo"   
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
 
