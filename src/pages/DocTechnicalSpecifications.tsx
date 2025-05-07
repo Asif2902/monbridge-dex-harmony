@@ -158,7 +158,7 @@ function removeLiquidity(
               <div className="font-medium text-slate-800">Atlantis DEX</div>
             </div>
             <div className="p-4 text-center border rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow">
-              <div className="font-medium text-slate-800">Monda Fund</div>
+              <div className="font-medium text-slate-800">Purps Dex</div>
             </div>
             <div className="p-4 text-center border rounded-lg bg-white shadow-sm hover:shadow-md transition-shadow">
               <div className="font-medium text-slate-800">Taya Finance</div>
